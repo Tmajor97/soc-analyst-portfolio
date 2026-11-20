@@ -123,3 +123,10 @@ Which octet is "interesting" = `ceil(N / 8)`. `/22` → ceil(22/8) = 3 → 3rd o
 ### Questions I still have
 - [ ] [e.g., "how do I read the 3rd-octet case (/22) quickly in my head?"]
 
+**/31 and /32 exceptions:**
+- /31 → block 2, both usable (point-to-point link, RFC 3021 — no network/broadcast needed)
+- /32 → block 1, the one address IS usable (single host: SG rule, DNS A record, allowlist)
+
+**SOC shortcut:** `/32` in an SG rule = one specific IP (locked down). `0.0.0.0/0` = everyone (red flag). The smaller the CIDR number, the more locked-down the rule.
+
+
